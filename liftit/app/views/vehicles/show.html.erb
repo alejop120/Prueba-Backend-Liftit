@@ -1,0 +1,18 @@
+
+<p>
+  <strong>Plate:</strong>
+  <%= @vehicle.plate %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @vehicle.model %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @vehicle.user.name %>
+</p>
+
+<%= link_to 'Editar', edit_user_vehicle_path(@vehicle.user, @vehicle) %> |
+<%= link_to 'Atras', user_vehicles_path(@vehicle.user) %>

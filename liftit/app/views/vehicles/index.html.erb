@@ -1,0 +1,38 @@
+<div class="panel panel-default">
+  <!-- BUSCADOR -->
+  <div class="busqueda">
+    <form>
+      <div class="field" align="rigth">
+        <input type="text" name="plate" id="search" placeholder="Placa" value="<%= params[:plate] %>" style="border-radius: 5px;">
+        <input class="btn btn-default btn-sm" type="submit" value="Buscar">
+      </div>
+    </form>
+  </div>
+  <div class="panel-heading">
+    Vehículos de <%= @user.name %>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Placa</th>
+        <th>Modelo</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @vehicles.each do |vehicle| %>
+      <tr>
+        <td><%= vehicle.plate %></td>
+        <td><%= vehicle.model %></td>
+        <td><%= link_to 'Detalle', [@user, vehicle] %></td>
+        <td><%= link_to 'Editar', edit_user_vehicle_path(@user, vehicle) %></td>
+        <td><%= link_to 'Eliminar', [@user, vehicle], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+<%= link_to "Regresar a propietarios", users_path(), class: "btn btn-default" %>
+<%= link_to "Nuevo Vehículo", new_user_vehicle_path(@user), class: "btn btn-primary" %>

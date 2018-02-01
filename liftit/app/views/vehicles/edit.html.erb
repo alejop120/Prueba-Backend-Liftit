@@ -1,0 +1,6 @@
+<h1>Editando Vehículo</h1>
+
+<%= render 'form', user: @vehicle.user, vehicle: @vehicle %>
+
+<%= link_to 'Detalle', [@vehicle.user, @vehicle] %> |
+<%= link_to 'Atras', user_vehicles_path(@vehicle.user) %>

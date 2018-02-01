@@ -1,0 +1,13 @@
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Document number:</strong>
+  <%= @user.document_number %>
+</p>
+
+<%= link_to 'Editar', edit_user_path(@user) %> |
+<%= link_to 'Atras', users_path %>
